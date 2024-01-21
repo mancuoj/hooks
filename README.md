@@ -1,6 +1,6 @@
 # React Hooks
 
-My collection of useful React hooks, highly inspired by the following projects:
+Highly inspired by the following projects:
 
 - https://github.com/uidotdev/usehooks
 - https://github.com/juliencrn/usehooks-ts
