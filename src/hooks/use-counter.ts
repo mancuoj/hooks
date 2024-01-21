@@ -1,9 +1,12 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 
-export default function useCounter() {
-  const [count, setCount] = useState(0)
-  const inc = useCallback(() => {
-    setCount((c) => c + 1)
-  }, [])
-  return { count, inc }
+export function useCounter(initialValue?: number) {
+  const [count, setCount] = useState(initialValue || 0)
+  return {
+    count,
+    inc: () => setCount(c => c + 1),
+    dec: () => setCount(c => c - 1),
+    reset: () => setCount(initialValue || 0),
+    setCount,
+  }
 }
