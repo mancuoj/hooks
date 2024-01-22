@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { useEffectOnce } from '../hooks/use-effect-once'
+import { useEffectOnce } from './use-effect-once'
 import { renderHook } from '@testing-library/react'
 
 describe('use effect once', () => {
