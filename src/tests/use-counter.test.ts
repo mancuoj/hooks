@@ -3,9 +3,10 @@ import { renderHook } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
 import { useCounter } from '../hooks/use-counter'
 
-describe('useCounter', () => {
+describe('use counter', () => {
   it('should use counter', () => {
     const { result } = renderHook(() => useCounter())
+
     expect(result.current.count).toBe(0)
     expect(result.current.inc).toBeTypeOf('function')
     expect(result.current.dec).toBeTypeOf('function')
@@ -15,11 +16,13 @@ describe('useCounter', () => {
 
   it('should default value works', () => {
     const { result } = renderHook(() => useCounter(10))
+
     expect(result.current.count).toBe(10)
   })
 
   it('should increment counter', () => {
     const { result } = renderHook(() => useCounter(1))
+
     act(() => {
       result.current.inc()
     })
@@ -28,6 +31,7 @@ describe('useCounter', () => {
 
   it('should decrement counter', () => {
     const { result } = renderHook(() => useCounter())
+
     act(() => {
       result.current.dec()
     })
@@ -35,7 +39,8 @@ describe('useCounter', () => {
   })
 
   it('should set counter', () => {
-    const { result } = renderHook(() => useCounter())
+    const { result } = renderHook(() => useCounter(2))
+
     act(() => {
       result.current.setCount(10)
     })
@@ -44,6 +49,7 @@ describe('useCounter', () => {
 
   it('should reset counter', () => {
     const { result } = renderHook(() => useCounter())
+
     act(() => {
       result.current.setCount(10)
       result.current.reset()
@@ -53,6 +59,7 @@ describe('useCounter', () => {
 
   it('should set counter use previous value', () => {
     const { result } = renderHook(() => useCounter(3))
+
     act(() => {
       result.current.setCount(prev => prev + 7)
     })
