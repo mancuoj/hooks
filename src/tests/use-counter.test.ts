@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { renderHook } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
-import { useCounter } from './use-counter'
+import { useCounter } from '../hooks/use-counter'
 
 describe('use counter', () => {
   it('should use counter', () => {

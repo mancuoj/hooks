@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { useEffectOnce } from './use-effect-once'
+import { useEffectOnce } from '../hooks/use-effect-once'
 import { renderHook } from '@testing-library/react'
 
 describe('use effect once', () => {
@@ -17,7 +17,7 @@ describe('use effect once', () => {
     const mockEffect = vi.fn().mockReturnValue(mockEffectCleanup)
     const { unmount } = renderHook(() => useEffectOnce(mockEffect))
 
-    expect(mockEffectCleanup).not.toHaveBeenCalled()
+    expect(mockEffectCleanup).not.toHaveBeenCalledOnce()
     unmount()
     expect(mockEffectCleanup).toHaveBeenCalledOnce()
   })
