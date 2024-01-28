@@ -7,8 +7,8 @@ describe('use counter', () => {
   it('should use counter', () => {
     const { result } = renderHook(() => useCounter())
     expect(result.current.count).toBe(0)
-    expect(result.current.inc).toBeTypeOf('function')
-    expect(result.current.dec).toBeTypeOf('function')
+    expect(result.current.increment).toBeTypeOf('function')
+    expect(result.current.decrement).toBeTypeOf('function')
     expect(result.current.reset).toBeTypeOf('function')
     expect(result.current.setCount).toBeTypeOf('function')
   })
@@ -20,13 +20,13 @@ describe('use counter', () => {
 
   it('should increment counter', () => {
     const { result } = renderHook(() => useCounter(1))
-    act(() => result.current.inc())
+    act(() => result.current.increment())
     expect(result.current.count).toBe(2)
   })
 
   it('should decrement counter', () => {
     const { result } = renderHook(() => useCounter())
-    act(() => result.current.dec())
+    act(() => result.current.decrement())
     expect(result.current.count).toBe(-1)
   })
 
