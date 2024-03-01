@@ -5,4 +5,3 @@
 - https://github.com/streamich/react-use
 - https://github.com/alibaba/hooks
 - https://github.com/antonioru/beautiful-react-hooks
-- ❤️
