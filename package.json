@@ -53,7 +53,7 @@
     "lint": "eslint . && tsc",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui",
+    "test:ui": "vitest --ui --coverage",
     "test:coverage": "vitest run --coverage",
     "clean": "rimraf ./dist",
     "check": "pnpm lint && pnpm test",
