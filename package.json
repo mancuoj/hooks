@@ -15,7 +15,11 @@
     "url": "git+https://github.com/mancuoj/hooks.git"
   },
   "bugs": "https://github.com/mancuoj/hooks/issues",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "typescript",
+    "hooks"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
@@ -46,13 +50,13 @@
   "scripts": {
     "build": "bunchee",
     "dev": "bunchee -w",
-    "lint": "eslint .",
-    "typecheck": "tsc",
+    "lint": "eslint . && tsc",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
     "clean": "rimraf ./dist",
-    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "check": "pnpm lint && pnpm test",
     "prepare": "simple-git-hooks",
     "prepublishOnly": "pnpm clean && pnpm build && pnpm check",
     "release": "bumpp && pnpm publish"
