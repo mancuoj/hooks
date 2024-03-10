@@ -46,7 +46,6 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui --coverage",
-    "test:coverage": "vitest run --coverage",
     "prepare": "simple-git-hooks",
     "prepublishOnly": "pnpm build",
     "release": "bumpp && pnpm publish"
