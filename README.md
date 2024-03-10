@@ -6,7 +6,7 @@
 
 Collection of common React hooks.
 
-## Usage
+## Install
 
 ```shell
 ni @mancuoj/hooks
